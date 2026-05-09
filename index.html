@@ -8,14 +8,23 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
-        /* 모든 기기에서 스크롤을 방지하고 높이를 꽉 채움 */
         html, body { height: 100%; margin: 0; padding: 0; overflow: hidden; }
+        /* 부드러운 호버 효과 */
+        .btn-detail { transition: all 0.3s ease; }
     </style>
 </head>
-<body class="bg-slate-900 text-white flex flex-col justify-between h-full">
+<body class="bg-slate-900 text-white flex flex-col justify-between h-full relative">
 
-    <!-- Header: 상단 여백 최소화 -->
-    <header class="pt-6 md:pt-10 pb-2 text-center px-4">
+    <!-- 내용 상세보기 링크 (우측 상단 배치) -->
+    <div class="absolute top-4 right-4 z-10">
+        <a href="detail.html" class="btn-detail flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-slate-700 bg-slate-800/50 hover:bg-slate-700 hover:border-slate-500 text-[11px] font-medium text-gray-400 hover:text-white">
+            <span>내용 상세보기</span>
+            <i class="fas fa-chevron-right text-[9px]"></i>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="pt-8 md:pt-12 pb-2 text-center px-4">
         <h1 class="text-2xl md:text-5xl font-extrabold text-orange-500 mb-1">
             작은 용접, 정밀한 수리
         </h1>
@@ -24,25 +33,22 @@
         </p>
     </header>
 
-    <!-- Main Content: 모바일에서 카드 간격 축소 -->
+    <!-- Main Content -->
     <main class="px-4 flex-grow flex items-center">
         <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4 w-full">
 
-            <!-- 서비스 1 -->
             <div class="bg-slate-800 p-4 md:p-6 rounded-xl border border-slate-700 text-center shadow-lg">
                 <i class="fas fa-truck-moving text-2xl md:text-3xl text-orange-400 mb-2"></i>
                 <h3 class="text-lg md:text-xl font-bold mb-1">출장 보수</h3>
                 <p class="text-gray-400 text-xs md:text-sm leading-tight">대문, 난간, 상가 집기 등<br>현장 즉시 수리</p>
             </div>
 
-            <!-- 서비스 2 -->
             <div class="bg-slate-800 p-4 md:p-6 rounded-xl border border-slate-700 text-center shadow-lg">
                 <i class="fas fa-hammer text-2xl md:text-3xl text-blue-400 mb-2"></i>
                 <h3 class="text-lg md:text-xl font-bold mb-1">커스텀 제작</h3>
                 <p class="text-gray-400 text-xs md:text-sm leading-tight">캠핑용품, 철제 다리 등<br>원하는 사이즈 제작</p>
             </div>
 
-            <!-- 서비스 3 -->
             <div class="bg-slate-800 p-4 md:p-6 rounded-xl border border-slate-700 text-center shadow-lg">
                 <i class="fas fa-magic text-2xl md:text-3xl text-green-400 mb-2"></i>
                 <h3 class="text-lg md:text-xl font-bold mb-1">업사이클링</h3>
@@ -52,8 +58,8 @@
         </div>
     </main>
 
-    <!-- Footer: 연락처 카드 위치 고정 및 크기 조절 -->
-    <footer class="pb-6 md:pb-10 pt-2 text-center px-4">
+    <!-- Footer -->
+    <footer class="pb-8 md:pb-12 pt-2 text-center px-4">
         <div class="bg-orange-500 text-slate-900 px-6 py-3 md:px-8 md:py-4 rounded-xl shadow-2xl inline-block w-full max-w-sm">
             <p class="text-[10px] md:text-sm font-bold uppercase tracking-widest mb-0.5">상담 및 견적 문의</p>
             <p class="text-xl md:text-3xl font-black">010-XXXX-XXXX</p>
